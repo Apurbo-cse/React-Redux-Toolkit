@@ -18,7 +18,7 @@ const PostCard = () => {
               <TimeAgo timestamp={post.date} />
             </div>
             <div className="card-body text-center">
-              <h5 className="card-title mb-0">{post.title.substring(0, 20)}</h5>
+              <h5 className="card-title mb-0">{post.title}</h5>
               <h6 className="card-title mb-0">
                 {post.content.substring(0, 20)}
               </h6>
