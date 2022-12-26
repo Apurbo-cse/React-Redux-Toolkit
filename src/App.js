@@ -10,11 +10,14 @@ function App() {
     <>
       <Navbar />
 
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/post" element={<Post />} />
-        <Route exact path="/count" element={<Counter />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/post" element={<Post />} />
+          <Route exact path="/count" element={<Counter />} />
+        </Routes>
+      </div>
+      
     </>
   );
 }
