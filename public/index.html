@@ -40,6 +40,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+  <script>
+    $("button").click(function () {
+      $.get("demo_test.asp", function (data, status) {
+        alert("Data: " + data + "\nStatus: " + status);
+      });
+    });
+  </script>
 </body>
 
 </html>

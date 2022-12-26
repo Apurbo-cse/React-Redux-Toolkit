@@ -57,6 +57,9 @@ const AddPostForm = () => {
           value={content}
           onChange={onContentChanged}
         />
+
+        <textarea id="summernote" name="editordata"></textarea>
+
         <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
           Save Post
         </button>
