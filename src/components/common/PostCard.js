@@ -11,8 +11,8 @@ const PostCard = () => {
     <>
       {posts.map((post) => (
         <div className="col-6 col-md-4 col-lg-3 mb-3" key={post.id}>
-          <div className="card border-0 shadow   ">
-            <img src={Pic1} className="card-img-top p-2" alt={Pic1} />
+          <div className="card border-0 shadow  p-2 ">
+            <img src={Pic1} className="card-img-top " alt={Pic1} />
             <div className="d-flex">
               <PostAuthor userId={post.userId} />
               <TimeAgo timestamp={post.date} />

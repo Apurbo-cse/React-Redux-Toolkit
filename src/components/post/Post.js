@@ -6,6 +6,7 @@ const Post = () => {
   return (
     <>
       <div className="row my-3">
+      
         <PostCard />
 
         <AddPostForm />
