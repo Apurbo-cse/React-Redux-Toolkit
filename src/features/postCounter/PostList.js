@@ -15,6 +15,7 @@ const PostList = () => {
         </div>
       </div>
     </>
+  
   ));
 
   return (
