@@ -1,6 +1,30 @@
-import React from "react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { postAdded } from "../../features/postCounter/postsSlice";
 
 const CreatePost = () => {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  const onTitleChanged = (e) => setTitle(e.target.value);
+  const onContentChanged = (e) => setContent(e.target.value);
+
+  const onSavePostClicked = () => {
+    if (title && content) {
+      useDispatch(postAdded(title, content));
+      setTitle("");
+      setContent("");
+    }
+  };
+
+  const canSave = Boolean(title) && Boolean(content);
+
+  const usersOptions = users.map((user) => (
+    <option key={user.id} value={user.id}>
+      {user.name}
+    </option>
+  ));
+
   return (
     <>
       <form className="col-md-6">
@@ -9,10 +33,12 @@ const CreatePost = () => {
         <div class="form-group">
           <label for="exampleInputEmail1">Post Title:</label>
           <input
-            class="form-control"
             type="text"
             id="postTitle"
             name="postTitle"
+            value={title}
+            onChange={onTitleChanged}
+            class="form-control"
           />
           {/* <small id="emailHelp" class="form-text text-warning">
             We'll never share your email with anyone else.
@@ -21,11 +47,12 @@ const CreatePost = () => {
 
         <div class="form-group">
           <label for="exampleInputEmail1">Content:</label>
-          <input
-            class="form-control"
-            type="text"
+          <textarea
             id="postContent"
-            name="postTitle"
+            name="postContent"
+            value={content}
+            onChange={onContentChanged}
+            class="form-control"
           />
         </div>
 
@@ -36,7 +63,12 @@ const CreatePost = () => {
           </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">
+        <button
+          type="button"
+          onClick={onSavePostClicked}
+          disabled={!canSave}
+          class="btn btn-primary my-3"
+        >
           Submit
         </button>
       </form>
