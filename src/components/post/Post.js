@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import AddPostForm from "../../features/posts/AddPostForm";
+
+import AddPostForm from "./AddPostForm";
 import PostCard from "../common/PostCard";
 import PostCreateModal from "../modal/PostCreateModal";
 

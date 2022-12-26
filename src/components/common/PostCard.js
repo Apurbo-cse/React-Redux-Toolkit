@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import Pic1 from "../../assets/images/3.png";
-import PostAuthor from "../../features/posts/PostAuthor";
+import PostAuthor from "./PostAuthor";
 import { selectAllPosts } from "../../features/posts/postsSlice";
-import TimeAgo from "../../features/posts/TimeAgo";
+import TimeAgo from "./TimeAgo";
 
 const PostCard = () => {
   const posts = useSelector(selectAllPosts);
