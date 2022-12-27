@@ -10,6 +10,9 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Store } from "./app/Store";
+import { fetchUsers } from "./components/users/usersSlice";
+
+Store.dispatch(fetchUsers());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
