@@ -1,12 +1,30 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Pic1 from "../../assets/images/3.png";
 import PostAuthor from "./PostAuthor";
-import { selectAllPosts } from "../../features/posts/postsSlice";
+import {
+  selectAllPosts,
+  getPostsStatus,
+  getPostsError,
+  fetchPosts,
+} from "../../features/posts/postsSlice";
+
 import TimeAgo from "./TimeAgo";
 import ReactionButtons from "./ReactionButtons";
+
 const PostCard = () => {
+  const dispatch = useDispatch();
+
   const posts = useSelector(selectAllPosts);
+  const postsStatus = useSelector(getPostsStatus);
+  const error = useSelector(getPostsError);
+
+  useEffect(() => {
+    if (postsStatus === "idle") {
+      dispatch(fetchPosts());
+    }
+  }, [postsStatus, dispatch]);
+
   return (
     <>
       {posts.map((post) => (
