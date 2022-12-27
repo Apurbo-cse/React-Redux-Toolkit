@@ -26,6 +26,10 @@ const PostCard = () => {
     }
   }, [postsStatus, dispatch]);
 
+  const orderedPosts = posts
+    .slice()
+    .sort((a, b) => b.date.localeCompare(a.date));
+    
   return (
     <>
       {postsStatus === "loading" ? (
@@ -36,7 +40,7 @@ const PostCard = () => {
             <p>{error}</p>
           ) : (
             <>
-              {posts.map((post) => (
+              {orderedPosts.map((post) => (
                 <PostsExport key={post.id} post={post} />
               ))}
             </>

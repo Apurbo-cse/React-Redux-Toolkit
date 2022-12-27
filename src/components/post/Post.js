@@ -16,6 +16,7 @@ const Post = () => {
             <i class="fa fa-plus-circle" aria-hidden="true"></i> Create Post
           </button>
         </div>
+        
         <PostCard />
 
         <PostCreateModal show={modalShow} onHide={() => setModalShow(false)} />
