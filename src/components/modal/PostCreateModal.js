@@ -60,9 +60,6 @@ const PostCreateModal = (props) => {
                 onChange={onTitleChanged}
                 className="form-control"
               />
-              {/* <small id="emailHelp" className="form-text text-danger">
-                We'll never share your email with anyone else.
-              </small> */}
             </div>
             <div className="mb-3">
               <label for="exampleInputPassword1" class="form-label">
@@ -102,7 +99,6 @@ const PostCreateModal = (props) => {
             </button>
           </form>
         </Modal.Body>
-        
       </Modal>
     </>
   );
