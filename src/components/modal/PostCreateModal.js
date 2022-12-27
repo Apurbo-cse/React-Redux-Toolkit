@@ -102,9 +102,7 @@ const PostCreateModal = (props) => {
             </button>
           </form>
         </Modal.Body>
-        <Modal.Footer>
-          <button onClick={props.onHide}>Close</button>
-        </Modal.Footer>
+        
       </Modal>
     </>
   );
