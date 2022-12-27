@@ -4,7 +4,7 @@ import Pic1 from "../../assets/images/3.png";
 import PostAuthor from "./PostAuthor";
 import { selectAllPosts } from "../../features/posts/postsSlice";
 import TimeAgo from "./TimeAgo";
-
+import ReactionButtons from "./ReactionButtons";
 const PostCard = () => {
   const posts = useSelector(selectAllPosts);
   return (
@@ -25,6 +25,7 @@ const PostCard = () => {
 
             <h5 className="card-title mb-0">{post.title}</h5>
             <p className="card-title mb-0">{post.content.substring(0, 35)}..</p>
+            <ReactionButtons post={post} />
           </div>
         </div>
       ))}

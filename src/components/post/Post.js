@@ -23,7 +23,7 @@ const Post = () => {
           </button>
         </div>
 
-        {/* <PostCreateModal show={modalShow} onHide={() => setModalShow(false)} /> */}
+        <PostCreateModal show={modalShow} onHide={() => setModalShow(false)} />
       </div>
     </>
   );
