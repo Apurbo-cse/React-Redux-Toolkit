@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-import AddPostForm from "./AddPostForm";
 import PostCard from "../common/PostCard";
 import PostCreateModal from "../modal/PostCreateModal";
 
@@ -11,9 +9,6 @@ const Post = () => {
     <>
       <div className="row my-3">
         <PostCard />
-
-        <AddPostForm />
-
         <div className="col-2">
           <button
             className="btn btn-outline-dark"
