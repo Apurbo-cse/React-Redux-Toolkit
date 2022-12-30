@@ -5,7 +5,7 @@ import TimeAgo from "../common/TimeAgo";
 import Pic1 from "../../assets/images/3.png";
 import { useSelector } from "react-redux";
 import { selectPostById } from "../../features/posts/postsSlice";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const SinglePost = () => {
   const { postId } = useParams();
@@ -38,8 +38,15 @@ const SinglePost = () => {
           <h5 className="card-title mb-0">{post.title}</h5>
           <p className="card-title mb-0">{post.body}</p>
           <ReactionButtons post={post} />
+
+          <Link className="d-flex justify-content-end text-decoration-none">
+            <button className="btn btn-outline-info fw-bold  px-4">
+              Edit
+            </button>
+          </Link>
         </div>
       </div>
+
       <div className="col-md-4 mb-3">
         <div className="card border-0 shadow p-2">
           <div className="d-flex">
