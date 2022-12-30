@@ -5,12 +5,13 @@ import TimeAgo from "../common/TimeAgo";
 import Pic1 from "../../assets/images/3.png";
 import { useSelector } from "react-redux";
 import { selectPostById } from "../../features/posts/postsSlice";
+import { useParams } from "react-router-dom";
 
 const SinglePost = () => {
   // retrieve postId
-  
+  const { postId } = useParams();
+  const post = useSelector((state) => selectPostById(state, Number(postId)));
 
-  const post = useSelector((state) => selectPostById(state.postId));
   if (!post) {
     return (
       <>
