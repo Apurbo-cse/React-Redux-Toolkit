@@ -8,7 +8,7 @@ const Post = () => {
   return (
     <>
       <div className="row my-3">
-        <div className="col-3">
+        <div className="col-md-12 d-flex mb-2 justify-content-end">
           <button
             className="btn btn-outline-dark"
             onClick={() => setModalShow(true)}
@@ -16,7 +16,7 @@ const Post = () => {
             <i class="fa fa-plus-circle" aria-hidden="true"></i> Create Post
           </button>
         </div>
-        
+
         <PostCard />
 
         <PostCreateModal show={modalShow} onHide={() => setModalShow(false)} />
